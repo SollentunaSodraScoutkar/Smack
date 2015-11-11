@@ -53,10 +53,6 @@ namespace Smack.Modules
             //    return false;
             //}
 
-            //if (user.UserStatus != ChargePointUserStatus.Valid)
-            //{
-            //    return false;
-            //}
             return true;
         }
     }

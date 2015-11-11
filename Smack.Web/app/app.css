@@ -369,20 +369,6 @@ input.form-control {
     background-color: red;
 }
 
-.charge-amps .panel-group {
-    border-top: 1px solid #F5F5F5;
-}
-.charge-amps .panel-default {
-    border: none;
-}
-.charge-amps .panel-default>.panel-heading {
-    border: none;
-    background: none;
-}
-.charge-amps .panel-default>.panel-heading+.panel-collapse>.panel-body {
-    border: none;
-}
-
 .header {
     height: 300px;
     display: table;
@@ -404,27 +390,6 @@ input.form-control {
     }
 }
 
-ul#chargePointTabs {
-    padding: 10px;
-}
-
-ul#chargePointTabs li {
-    display: inline;
-    color: black;
-    padding: 10px 20px;
-    text-decoration: none;
-    border: 1px solid lightgray;
-    border-bottom: 0;
-    border-radius: 6px 6px 0 0;
-    
-}
-
-.chargePointTabSelected {
-    background-color: white;
-}
-.chargePointTabUnSelected {
-    background-color: lightgray;
-}
 /* 
   Allow angular.js to be loaded in body, hiding cloaked elements until 
   templates compile.  The !important is important given that there may be 
