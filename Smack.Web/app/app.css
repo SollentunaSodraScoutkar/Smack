@@ -1,0 +1,444 @@
+﻿body {
+  font-family: Verdana;
+  font-size: 12px;
+  line-height: 18px;
+  -webkit-font-smoothing: antialiased;
+  color: #000000;
+    background-color: #AAAAAA;
+}
+
+.navbar-inverse  {
+    background-color: #AAAAAA;
+}
+
+.navbar-nav {
+      font-family: Verdana;
+      font-size: 15px;
+}
+
+.navbar-nav>.active {
+      font-family: Verdana;
+      font-size: 15px;
+}
+
+p {
+  margin-bottom: 20px;
+  line-height: 24px;
+}
+h2,
+h3 {
+  font-family: Verdana;
+}
+
+.heading1Light {
+  font-family: Verdana;
+    font-size: 60px;
+}
+.heading1Heavy {
+  font-family: Verdana;
+    font-size: 60px;
+}
+
+.heading2Light {
+  font-family: Verdana;
+    font-size: 44px;
+}
+.heading2Heavy {
+  font-family: Verdana;
+    font-size: 44px;
+}
+.heading3Light {
+  font-family: Verdana;
+    font-size: 21px;
+}
+.heading3Heavy {
+  font-family: Verdana;
+    font-size: 21px;
+}
+.heading4 {
+  font-family: Verdana;
+    font-size: 18px;
+}
+.text4 {
+    font-family: Verdana;
+    font-size: 18px;
+    line-height: 1.3;
+}
+.text4_5 {
+    font-family: Verdana;
+    font-size: 15px;
+}
+.heading5 {
+  font-family: Verdana;
+    font-size: 14px;
+}
+.text5 {
+    font-family: Verdana;
+    font-size: 14px;
+}
+.heading6 {
+  font-family: Verdana;
+    font-size: 13px;
+}
+.text6 {
+  font-family: Verdana;
+    font-size: 13px;
+}
+.heading{
+    line-height:1;
+}
+.aweFontSize {
+    font-size: 21px;
+}
+:focus {
+  outline: none;
+}
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.headingUnderline {
+    border-top: solid #6dcff6;
+    border-top-width: 1px;
+    width: 140px;
+    margin: 9px 0;
+    overflow: hidden;
+}
+.whiteFont {
+    color: #FFFFFF
+}
+.blueFont {
+    color: #66ccff
+}
+.darkBlueFont {
+    color: #0033a0
+}
+.darkBlueFont:hover {
+    color: #003344
+}
+.redFont {
+    color: #DD0000
+}
+.greenFont {
+    color: #00AA00
+}
+
+.btn-ok {
+    background-color: #66ccff;
+    color: #FFFFFF;
+    border-color: #6699cc;
+}
+
+.well{
+    display: inline-block;
+    background-color: rgba(255,255,255,0.1);
+    border: none;
+}
+.solid{
+background-color: rgba(255,255,255,1);
+    border: none;
+}
+.solidGray{
+background-color: rgba(70,70,70,1);
+    border: none;
+}
+
+.margin-top-xsmall {
+    margin-top: 10px;
+}
+.margin-top-small {
+    margin-top: 20px;
+}
+.margin-top-med {
+    margin-top: 40px;
+}
+.margin-top-large {
+    margin-top: 60px;
+}
+.margin-top-xlarge {
+    margin-top: 100px;
+}
+.margin-right-small {
+    margin-right: 10px;
+}
+.margin-left-small {
+    margin-left: 10px;
+}
+
+.margin-bottom-small {
+    margin-bottom: 20px;
+}
+.margin-bottom-med {
+    margin-bottom: 40px;
+}
+
+.margin-bottom-xlarge {
+    margin-bottom: 100px;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.no-border  {
+    border: 0;
+}
+
+.register-form {
+    width: 100%;
+    text-align: left;
+}
+.register-form .form-inline {
+    float: left;
+}
+.register-form .form-control {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.form-inline {
+    width: 100%;
+    display: inline-block;
+}
+input.form-control {
+    max-width: 100%;
+}
+
+.input-error {
+    position: absolute;
+    top: 11px;
+    right: 30px;
+    width: 10px;
+    height: 10px;
+    background: red;
+    cursor: pointer;
+    display: none;
+}
+.alpha {
+    padding-left: 0 !important;
+}
+.omega {
+    padding-right: 0 !important;
+}
+
+#firstName {
+    padding-right: 15px;
+}
+#firstName:after {
+    content: "";
+    display: block;
+    float: right;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+}
+
+.charge-amps .panel-group {
+    border-top: 1px solid #F5F5F5;
+}
+.charge-amps .panel-default {
+    border: none;
+}
+.charge-amps .panel-default>.panel-heading {
+    border: none;
+    background: none;
+}
+.charge-amps .panel-default>.panel-heading+.panel-collapse>.panel-body {
+    border: none;
+}
+
+.header {
+    height: 300px;
+    display: table;
+}
+.header .margin-top-xlarge {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        height: 50vh;
+    }
+    .header .margin-top-xlarge {
+        line-height: 1;
+    }
+    .header .margin-top-xlarge span {
+        display: inline-block;
+    }
+}
+
+ul#chargePointTabs {
+    padding: 10px;
+}
+
+ul#chargePointTabs li {
+    display: inline;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1px solid lightgray;
+    border-bottom: 0;
+    border-radius: 6px 6px 0 0;
+    
+}
+
+.chargePointTabSelected {
+    background-color: white;
+}
+.chargePointTabUnSelected {
+    background-color: lightgray;
+}
+/* 
+  Allow angular.js to be loaded in body, hiding cloaked elements until 
+  templates compile.  The !important is important given that there may be 
+  other selectors that are more specific or come later and might alter display.  
+ */
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.menuLogo {
+ position: relative;
+ width: 70px;
+}

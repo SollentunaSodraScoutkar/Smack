@@ -1,0 +1,45 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="text-center">
+            <img ng-src="/content/img/logo.png" width="100" alt="Sollentuna Södra Scoutkår" />
+        </div>
+    </div>
+    <div class="row margin-top-large">
+        <div class="text-center heading whiteFont">
+            SMACK - Sollentuna Södra Scoutkårs MedlemsAdministrations...
+        </div>
+    </div>
+    <div class="row margin-top-small text-center">
+        <div class="well">
+            <div class="form-actions whiteFont text-center">
+                <div class="col-xs-12">
+                    <div ng-show="vm.message" class="alert alert-success">{{vm.message}}</div>
+                    <div ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
+                </div>
+
+                <span class="text4_5">Välkommen att logga in!</span>
+            </div>
+            <form name="form" ng-submit="vm.login()" role="form" class="form-inline" novalidate>
+                <div class="form-group margin-top-xsmall col-md-5">
+                    <div>
+                        <input type="text" placeholder="Användarnamn" name="username" id="username" class="form-control" ng-model="vm.user.varUserName" />
+                    </div>
+                </div>
+                <div class="form-group margin-top-xsmall col-md-5">
+                    <div>
+                        <input type="password" placeholder="Lösenord" name="password" id="password" class="form-control" ng-model="vm.user.varPassword" />
+                    </div>
+                </div>
+                <div class="form-group margin-top-xsmall col-md-2 pull-right">
+                    <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-ok btn-sm heading5"><span ng-show="vm.dataLoading" class="fa fa-spinner fa-pulse"></span> LOGGA IN</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-actions text-center whiteFont">
+            <span class="text4_5">
+                Jag har glömt mitt lösenord. Kan ni <a href="#/requestPasswordReset" class="blueFont">[skicka ett nytt]</a>?
+            </span>
+        </div>
+    </div>
+</div> <!-- /container -->
+
