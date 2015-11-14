@@ -7,12 +7,8 @@
                 <div class="heading4">Närvaroregistrering</div>
             </div>
             <div class="col-xs-12 form-group margin-top-xsmall">
-                <div class="col-xs-10 col-md-2 col-md-offset-4">
                     <input type="date" class="form-control input-sm" ng-model="vm.attendance.dtmAttendanceDate" value="" ng-change="vm.getMembers()"/>
-                </div>
-                <div class="col-xs-2 col-md-1">
                     <button class="btn btn-primary btn-xs" ng-click="vm.setToday($event)">Idag</button>
-                </div>
             </div>
             <div class="col-xs-12 form-group margin-top-xsmall">
                 <div>
@@ -42,7 +38,7 @@
                 </div>
             </div>
             <div class="col-xs-12 form-group text-center ">
-                <input type="button" value="Klar!" ng-click="vm.confirm()" class="btn btn-primary" ng-disabled="!vm.attendance.intAttendanceId" />
+                <input type="button" value="Klar!" ng-click="vm.confirm()" class="btn btn-primary btn-sm" ng-disabled="!vm.attendance.intAttendanceId" />
             </div>
         </form>
     </div>
