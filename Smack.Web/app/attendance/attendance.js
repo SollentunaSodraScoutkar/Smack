@@ -35,29 +35,34 @@
         vm.attendance = {};
 
         vm.getMembers = function () {
-            attendanceService.getMemberAttendanceByDivisionId(vm.attendance.intDivisionId)
-                .then(function (response) {
-                    vm.members = response.data;
-                });
             attendanceService.getAttendance(vm.attendance)
                 .then(function (response) {
                     var s = response.data;
                     s.dtmAttendanceDate = new Date(s.dtmAttendanceDate);
                     vm.attendance = s;
-                });
+                })
+                .then(function () {
+                    attendanceService.getMemberAttendanceById(vm.attendance.intAttendanceId)
+                        .then(function (response) {
+                            vm.memberAttendances = response.data;
+                        });
+                })
 
         }
 
         vm.attend = function (member) {
             member.blnAttend = true;
+            attendanceService.saveMemberAttendance(member);
         }
         
         vm.unattend = function (member) {
             member.blnAttend = false;
+            attendanceService.saveMemberAttendance(member);
         }
 
         vm.toggleAttend = function (member) {
             member.blnAttend = !member.blnAttend;
+            attendanceService.saveMemberAttendance(member);
         }
 
         vm.setToday = function (event) {

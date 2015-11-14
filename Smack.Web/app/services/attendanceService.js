@@ -10,15 +10,20 @@
     function attendanceService($http, restService) {
         return {
             getAttendance: getAttendance,
-            getMemberAttendanceByDivisionId: getMemberAttendanceByDivisionId
+            getMemberAttendanceById: getMemberAttendanceById,
+            saveMemberAttendance: saveMemberAttendance
         }
 
         function getAttendance(attendance) {
             return $http.post(restService.getPath() + '/attendance', attendance);
         };
 
-        function getMemberAttendanceByDivisionId(divisionId) {
-            return $http.get(restService.getPath() + '/attendance/' + divisionId + '/members');
+        function getMemberAttendanceById(attendanceId) {
+            return $http.get(restService.getPath() + '/attendance/' + attendanceId + '/members');
+        };
+
+        function saveMemberAttendance(memberAttendance) {
+            $http.put(restService.getPath() + '/attendance/members', memberAttendance);
         };
 
     }

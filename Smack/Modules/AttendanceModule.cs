@@ -1,4 +1,5 @@
-﻿using Nancy.ModelBinding;
+﻿using Nancy;
+using Nancy.ModelBinding;
 using Smack.DataAccess;
 using Smack.Models;
 using System;
@@ -17,7 +18,15 @@ namespace Smack.Modules
             _attendanceRepository = attendanceRepository;
 
             Post["/"] = x => GetAttendance();
-            Get["/{divisionId}/members"] = x => GetMemberAttendanceByDivisionId(x.divisionId);
+            Get["/{attendanceId}/members"] = x => GetMemberAttendanceById(x.attendanceId);
+            Put["/members"] = x => SaveMemberAttendance();
+        }
+
+        private HttpStatusCode SaveMemberAttendance()
+        {
+            var memberAttendance = this.Bind<MemberAttendance>();
+            _attendanceRepository.SaveMemberAttendance(memberAttendance);
+            return HttpStatusCode.OK;
         }
 
         private Attendance GetAttendance()
@@ -32,9 +41,9 @@ namespace Smack.Modules
             return attendance;
         }
 
-        private IEnumerable<MemberAttendance> GetMemberAttendanceByDivisionId(int divisionId)
+        private IEnumerable<MemberAttendance> GetMemberAttendanceById(int attendanceId)
         {
-            return _attendanceRepository.GetMemberAttendanceByDivisionId(divisionId);
+            return _attendanceRepository.GetMemberAttendanceByAttendanceId(attendanceId);
         }
 
     }

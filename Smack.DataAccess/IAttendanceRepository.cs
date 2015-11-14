@@ -11,6 +11,7 @@ namespace Smack.DataAccess
     {
         Attendance GetAttendance(Attendance attendance);
         int CreateAttendance(Attendance attendance);
-        IEnumerable<MemberAttendance> GetMemberAttendanceByDivisionId(int divisionId);
+        IEnumerable<MemberAttendance> GetMemberAttendanceByAttendanceId(int id);
+        void SaveMemberAttendance(MemberAttendance memberAttendance);
     }
 }

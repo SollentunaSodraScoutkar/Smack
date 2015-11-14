@@ -15,6 +15,7 @@ namespace Smack.DataAccess
             int attendanceId;
             using (var sqlConnection = GetSqlConnection())
             {
+                attendance.DtmAttendanceDate = attendance.DtmAttendanceDate.Date;
                 string sql = "INSERT INTO Attendance (varName, dtmAttendanceDate, intDivisionId, blnConfirmed) VALUES (@varName, @dtmAttendanceDate, @intDivisionId, @blnConfirmed); SELECT @@IDENTITY";
                 attendanceId = sqlConnection.Query<int>(sql, attendance).Single();
             }
@@ -26,21 +27,46 @@ namespace Smack.DataAccess
             Attendance existingAttendance;
             using (var sqlConnection = GetSqlConnection())
             {
+                attendance.DtmAttendanceDate = attendance.DtmAttendanceDate.Date;
                 string sql = "SELECT * FROM Attendance where intDivisionId = @intDivisionId and dtmAttendanceDate = @dtmAttendanceDate";
                 existingAttendance = sqlConnection.Query<Attendance>(sql, attendance).SingleOrDefault();
             }
             return existingAttendance;
         }
 
-        public IEnumerable<MemberAttendance> GetMemberAttendanceByDivisionId(int intDivisionId)
+        public IEnumerable<MemberAttendance> GetMemberAttendanceByAttendanceId(int id)
         {
             IEnumerable<MemberAttendance> memberAttendance;
             using (var sqlConnection = GetSqlConnection())
             {
-                string sql = "SELECT m.intMemberID, m.chrFirstName, m.chrLastName, md.intDivisionID, ma.blnAttend FROM Member m LEFT JOIN MemberDivisions md on m.intMemberID = md.intMemberID LEFT JOIN MemberAttendance ma on m.intMemberID = ma.intMemberId where intDivisionId = @intDivisionId and dtmStart < GetDate() and(dtmEnd is null or dtmEnd > GetDate()) and intStatus = 1";
-                memberAttendance = sqlConnection.Query<MemberAttendance>(sql, new { IntDivisionId = intDivisionId });
+                string sql = @"SELECT a.intAttendanceId, m.intMemberID, m.chrFirstName, m.chrLastName, md.intDivisionID, ma.blnAttend FROM Member m 
+                                    INNER JOIN MemberDivisions md on m.intMemberID = md.intMemberID 
+                                    INNER JOIN Attendance a on md.intDivisionId = a.intDivisionId
+                                    LEFT JOIN MemberAttendance ma on m.intMemberID = ma.intMemberId AND a.intAttendanceId = ma.intAttendanceId
+                                        where a.intAttendanceId = @intAttendanceId and md.dtmStart < GetDate() and(md.dtmEnd is null or md.dtmEnd > GetDate()) and m.intStatus = 1";
+                memberAttendance = sqlConnection.Query<MemberAttendance>(sql, new { IntAttendanceId = id });
             }
             return memberAttendance;
+        }
+
+        public void SaveMemberAttendance(MemberAttendance memberAttendance)
+        {
+            using (var sqlConnection = GetSqlConnection())
+            {
+                string sql = "SELECT * FROM MemberAttendance WHERE intMemberId = @intMemberId AND intAttendanceId = @intAttendanceId";
+                var existing = sqlConnection.Query<MemberAttendance>(sql, memberAttendance).SingleOrDefault();
+                if (existing == null)
+                {
+                    sql = "INSERT INTO MemberAttendance(intAttendanceId, intMemberId, blnAttend) VALUES (@intAttendanceId, @intMemberId, @blnAttend)";
+
+                }
+                else
+                {
+                    sql = "UPDATE MemberAttendance SET blnAttend = @blnAttend WHERE intMemberId = @intMemberId AND intAttendanceId = @intAttendanceId";
+                }
+                sqlConnection.Execute(sql, memberAttendance);
+            }
+
         }
     }
 }

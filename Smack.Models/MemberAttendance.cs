@@ -8,6 +8,7 @@ namespace Smack.Models
 {
     public class MemberAttendance
     {
+        public int IntAttendanceId { get; set; }
         public int IntMemberId { get; set; }
         public string ChrFirstName { get; set; }
         public string ChrLastName { get; set; }

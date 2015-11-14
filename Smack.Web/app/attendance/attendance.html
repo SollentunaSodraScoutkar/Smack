@@ -22,7 +22,7 @@
             </div>
             <div class="col-xs-12 form-group text-center ">
                 <table class="text4">
-                    <tr ng-swipe-left="vm.attend(member)" ng-swipe-right="vm.unattend(member)" ng-click="vm.toggleAttend(member)" ng-repeat="member in vm.members">
+                    <tr ng-swipe-left="vm.attend(member)" ng-swipe-right="vm.unattend(member)" ng-click="vm.toggleAttend(member)" ng-repeat="member in vm.memberAttendances">
                         <td><span ng-show="member.blnAttend==undefined" class="glyphicon glyphicon-question-sign blueFont"></span><span ng-show="member.blnAttend" class="glyphicon glyphicon-ok-sign greenFont"></span><span ng-show="member.blnAttend==false" class="glyphicon glyphicon-remove-sign redFont"></span></td><td class="text-left" > {{member.chrFirstName}} {{member.chrLastName}}</td>
                     </tr>
                 </table>
