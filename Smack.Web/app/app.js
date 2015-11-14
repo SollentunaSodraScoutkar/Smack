@@ -9,8 +9,10 @@
             'ngRoute',
             'myApp.login',
             'myApp.dashboard',
+            'myApp.attendance',
             'myApp.restService',
-            'myApp.authService'
+            'myApp.authService',
+            'myApp.divisionService'
         ])
         .config(config)
         .run(run);
@@ -20,7 +22,7 @@
         $httpProvider.defaults.useXDomain = true;
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
         $httpProvider.interceptors.push('AuthInterceptorService');
-        $routeProvider.otherwise({ redirectTo: '/login' });
+        $routeProvider.otherwise({ redirectTo: '/attendance' });
     }
 
 

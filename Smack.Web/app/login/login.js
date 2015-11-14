@@ -39,7 +39,7 @@
 
                         $window.sessionStorage.setItem('token', response.data.token);
                         $window.sessionStorage.setItem('user', JSON.stringify(response.data.user));
-                        $location.path('/dashboard');
+                        $location.path('/attendance');
                 })
                 .catch(function (reponse) {
                     vm.error = "Fel användarnamn eller lösenord";
