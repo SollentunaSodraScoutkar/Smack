@@ -35,7 +35,7 @@
         vm.attendance = {};
 
         vm.getMembers = function () {
-            divisionService.getMembers(vm.attendance.intDivisionId)
+            attendanceService.getMemberAttendanceByDivisionId(vm.attendance.intDivisionId)
                 .then(function (response) {
                     vm.members = response.data;
                 });

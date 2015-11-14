@@ -17,6 +17,7 @@ namespace Smack.Modules
             _attendanceRepository = attendanceRepository;
 
             Post["/"] = x => GetAttendance();
+            Get["/{divisionId}/members"] = x => GetMemberAttendanceByDivisionId(x.divisionId);
         }
 
         private Attendance GetAttendance()
@@ -29,6 +30,11 @@ namespace Smack.Modules
             }
             attendance.IntAttendanceId = _attendanceRepository.CreateAttendance(attendance);
             return attendance;
+        }
+
+        private IEnumerable<MemberAttendance> GetMemberAttendanceByDivisionId(int divisionId)
+        {
+            return _attendanceRepository.GetMemberAttendanceByDivisionId(divisionId);
         }
 
     }

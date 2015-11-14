@@ -31,5 +31,16 @@ namespace Smack.DataAccess
             }
             return existingAttendance;
         }
+
+        public IEnumerable<MemberAttendance> GetMemberAttendanceByDivisionId(int intDivisionId)
+        {
+            IEnumerable<MemberAttendance> memberAttendance;
+            using (var sqlConnection = GetSqlConnection())
+            {
+                string sql = "SELECT m.intMemberID, m.chrFirstName, m.chrLastName, md.intDivisionID, ma.blnAttend FROM Member m LEFT JOIN MemberDivisions md on m.intMemberID = md.intMemberID LEFT JOIN MemberAttendance ma on m.intMemberID = ma.intMemberId where intDivisionId = @intDivisionId and dtmStart < GetDate() and(dtmEnd is null or dtmEnd > GetDate()) and intStatus = 1";
+                memberAttendance = sqlConnection.Query<MemberAttendance>(sql, new { IntDivisionId = intDivisionId });
+            }
+            return memberAttendance;
+        }
     }
 }
