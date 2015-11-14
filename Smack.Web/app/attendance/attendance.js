@@ -41,5 +41,23 @@
                 });
 
         }
+
+        vm.attend = function (member) {
+            member.blnAttend = true;
+        }
+        
+        vm.unattend = function (member) {
+            member.blnAttend = false;
+        }
+
+        vm.toggleAttend = function (member) {
+            member.blnAttend = !member.blnAttend;
+        }
+
+        vm.setToday = function (event) {
+            event.preventDefault();
+            vm.attendance.dtmAttendanceDate = new Date();
+        }
+
     }
 })();
