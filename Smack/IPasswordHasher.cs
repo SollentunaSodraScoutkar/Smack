@@ -1,9 +1,11 @@
-﻿namespace Smack
+﻿using Smack.Models;
+
+namespace Smack
 {
     public interface IPasswordHasher
     {
         string CreateHash(string password);
-        bool ValidatePassword(string password, string goodHash);
+        bool ValidatePassword(User password, User goodHash);
         string CreateToken();
     }
 }

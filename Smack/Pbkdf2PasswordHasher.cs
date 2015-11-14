@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Smack.Models;
+using System;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -32,6 +33,11 @@ namespace Smack
             return "sha1:" + Pbkdf2Iterations + ":" +
                 Convert.ToBase64String(salt) + ":" +
                 Convert.ToBase64String(hash);
+        }
+
+        public bool ValidatePassword(User unsecureUser, User realUser)
+        {
+            return ValidatePassword(unsecureUser.VarPassword, realUser.VarPassword);
         }
 
         /// <summary>

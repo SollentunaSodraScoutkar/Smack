@@ -48,10 +48,10 @@ namespace Smack.Modules
             }
 
             //Temopraily commented, since we must use old encryption /TB
-            //if (!_passwordHasher.ValidatePassword(authUser.VarPassword, user.VarPassword))
-            //{
-            //    return false;
-            //}
+            if (!_passwordHasher.ValidatePassword(authUser, user))
+            {
+                return false;
+            }
 
             return true;
         }
