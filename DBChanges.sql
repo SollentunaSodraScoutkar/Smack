@@ -61,8 +61,17 @@ BEGIN
 
 	INSERT INTO DatabaseVersion (Version) VALUES (@changeVersion)
 END
---------------------------------------------------	
+--------------------------------------------------
 -------------------------------------------------
+SELECT @changeVersion = 2
+IF @currentVersion < @changeVersion 
+BEGIN
+	ALTER TABLE MemberAttendance ADD [blnAttend] bit NULL
+		
+	INSERT INTO DatabaseVersion (Version) VALUES (@changeVersion)
+END
+--------------------------------------------------	
+
 
 SELECT @currentVersion = MAX(Version) FROM DatabaseVersion
 

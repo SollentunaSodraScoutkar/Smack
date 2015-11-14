@@ -19,6 +19,17 @@ namespace Smack.DataAccess
             return members;
         }
 
+        public IEnumerable<Member> GetFromDivision(int intDivisionId)
+        {
+            IEnumerable<Member> members;
+            using (var sqlConnection = GetSqlConnection())
+            {
+                string sql = "SELECT * FROM Member WHERE intMemberID IN (SELECT intMemberID FROM MemberDivisions where intDivisionId = @intDivisionId and dtmStart < GetDate() and (dtmEnd is null or dtmEnd > GetDate())) and intStatus = 1";
+                members = sqlConnection.Query<Member>(sql, new {IntDivisionId = intDivisionId});
+            }
+            return members;
+        }
+
         public void Save(Member member)
         {
             throw new NotImplementedException("Fix SQL");

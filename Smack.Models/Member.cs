@@ -4,7 +4,7 @@
     {
         // ReSharper disable once InconsistentNaming
         public int IntMemberID { get; set; }
-        public string VarFirstName { get; set; }
-        public string VarSurName { get; set; }
+        public string ChrFirstName { get; set; }
+        public string ChrLastName { get; set; }
     }
 }

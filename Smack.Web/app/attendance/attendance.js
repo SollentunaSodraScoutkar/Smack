@@ -32,5 +32,32 @@
         }
 
         vm.getDivisions();
+        vm.attendance = {};
+
+        vm.getMembers = function () {
+            divisionService.getMembers(vm.attendance.intDivisionId)
+                .then(function (response) {
+                    vm.attendance.members = response.data;
+                });
+
+        }
+
+        vm.attend = function (member) {
+            member.blnAttend = true;
+        }
+        
+        vm.unattend = function (member) {
+            member.blnAttend = false;
+        }
+
+        vm.toggleAttend = function (member) {
+            member.blnAttend = !member.blnAttend;
+        }
+
+        vm.setToday = function (event) {
+            event.preventDefault();
+            vm.attendance.dtmAttendanceDate = new Date();
+        }
+
     }
 })();
