@@ -98,6 +98,7 @@
     <Compile Include="Modules\DivisionModule.cs" />
     <Compile Include="Modules\MemberModule.cs" />
     <Compile Include="Modules\SecureModule.cs" />
+    <Compile Include="OldSercurity.cs" />
     <Compile Include="Pbkdf2PasswordHasher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

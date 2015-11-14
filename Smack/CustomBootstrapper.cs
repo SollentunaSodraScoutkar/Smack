@@ -13,7 +13,7 @@ namespace Smack
         {
             container.Register<IUserRepository>(new UserRepository());
             container.Register<IMemberRepository>(new MemberRepository());
-            container.Register<IPasswordHasher>(new Pbkdf2PasswordHasher());
+            container.Register<IPasswordHasher>(new OldSecurity());
             container.Register<IDivisionRepository>(new DivisionRepository());
             container.Register<IAttendanceRepository>(new AttendanceRepository());
 
