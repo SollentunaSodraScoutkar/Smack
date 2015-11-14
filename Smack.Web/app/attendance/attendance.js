@@ -73,9 +73,20 @@
 
         vm.confirm = function () {
             vm.attendance.blnConfirmed = true;
-            attendanceService.updateAttendance(vm.attendance).then(function () {
+            attendanceService.updateAttendance(vm.attendance).then(function() {
                 vm.message = "Listan är klar!";
-            })
+            });
+        }
+
+        vm.attendAll = function () {
+            vm.memberAttendances.forEach(function (member) {
+                vm.attend(member);
+            });
+        }
+        vm.unattendAll = function () {
+            vm.memberAttendances.forEach(function (member) {
+                vm.unattend(member);
+            });
         }
     }
 })();

@@ -7,8 +7,11 @@
                 <div class="heading4">Närvaroregistrering</div>
             </div>
             <div class="col-xs-12 form-group margin-top-xsmall">
-                <div>
-                    <input type="date" class="form-control input-sm" ng-model="vm.attendance.dtmAttendanceDate" value="" ng-change="vm.getMembers()" /><button class="btn btn-primary btn-xs" ng-click="vm.setToday($event)">Idag</button>
+                <div class="col-xs-10 col-md-2 col-md-offset-4">
+                    <input type="date" class="form-control input-sm" ng-model="vm.attendance.dtmAttendanceDate" value="" ng-change="vm.getMembers()"/>
+                </div>
+                <div class="col-xs-2 col-md-1">
+                    <button class="btn btn-primary btn-xs" ng-click="vm.setToday($event)">Idag</button>
                 </div>
             </div>
             <div class="col-xs-12 form-group margin-top-xsmall">
@@ -16,6 +19,14 @@
                     <select id="division" class="form-control input-sm" ng-change="vm.getMembers()" ng-model="vm.attendance.intDivisionId" ng-options="p.intDivisionID as p.varName for p in vm.divisions" ng-disabled="!vm.attendance.dtmAttendanceDate">
                         <option value="">Välj avdelning</option>
                     </select>
+                </div>
+            </div>
+            <div class="col-xs-12 form-group margin-top-xsmall" ng-show="vm.attendance.intAttendanceId">
+                <div class="col-xs-12 col-md-3 col-md-offset-3" ng-click="vm.attendAll()">
+                    <span class="glyphicon glyphicon-ok-sign greenFont"></span> Alla här
+                </div>
+                <div class="col-xs-12 col-md-3" ng-click="vm.unattendAll()">
+                    <span class="glyphicon glyphicon-remove-sign redFont"></span> Ingen här
                 </div>
             </div>
             <div class="col-xs-12 form-group margin-top-xsmall">
