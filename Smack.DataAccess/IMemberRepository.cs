@@ -6,5 +6,6 @@ namespace Smack.DataAccess
     public interface IMemberRepository
     {
         IEnumerable<Member> GetAll();
+        void Save(Member member);
     }
 }

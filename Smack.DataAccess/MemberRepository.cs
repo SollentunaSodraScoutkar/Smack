@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Dapper;
 using Smack.Models;
@@ -16,6 +17,16 @@ namespace Smack.DataAccess
                 members = sqlConnection.Query<Member>(sql);
             }
             return members;
+        }
+
+        public void Save(Member member)
+        {
+            throw new NotImplementedException("Fix SQL");
+            using (var sqlConnection = GetSqlConnection())
+            {
+                string sql = "INSERT INTO Member () VALUES (IntFirstName=@intFirstName...)";
+                sqlConnection.Execute(sql, member);
+            }
         }
     }
 }

@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smack.DataAccess", "Smack.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smack.Models", "Smack.Models\Smack.Models.csproj", "{46674420-8D72-46FD-9188-CBC379A2C1FA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{1B7BD738-8A92-4B28-813C-A60CF806B0DA}"
+	ProjectSection(SolutionItems) = preProject
+		DBChanges.sql = DBChanges.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
