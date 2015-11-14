@@ -12,6 +12,7 @@
             'myApp.attendance',
             'myApp.restService',
             'myApp.authService',
+            'myApp.attendanceService',
             'myApp.divisionService'
         ])
         .config(config)

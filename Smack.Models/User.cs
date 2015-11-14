@@ -10,6 +10,7 @@ namespace Smack.Models
         public string VarUserName { get; set; }
         public string VarEmail { get; set; }
         public string VarPassword { get; set; }
+        public string VarPwdSalt { get; set; }
 
         public string UserName => VarUserName;
 

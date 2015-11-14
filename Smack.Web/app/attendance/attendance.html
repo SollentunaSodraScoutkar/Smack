@@ -22,11 +22,12 @@
             </div>
             <div class="col-xs-12 form-group ">
                 <table class="visible-xs-inline-block text-left">
-                    <tr ng-swipe-left="vm.attend(member)" ng-swipe-right="vm.unattend(member)" ng-click="vm.toggleAttend(member)" ng-repeat="member in vm.attendance.members">
+                    <tr ng-swipe-left="vm.attend(member)" ng-swipe-right="vm.unattend(member)" ng-click="vm.toggleAttend(member)" ng-repeat="member in vm.members">
                         <td><span ng-show="member.blnAttend==undefined"> ?</span><span ng-show="member.blnAttend"> HÄR</span><span ng-show="member.blnAttend==false"> BORTA</span></td><td >{{member.chrFirstName}} {{member.chrLastName}}</td>
                     </tr>
                 </table>
             </div>
+            <input type="button" value="Klar!" class="btn btn-primary"/>
         </form>
     </div>
 </div>

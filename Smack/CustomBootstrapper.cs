@@ -15,6 +15,7 @@ namespace Smack
             container.Register<IMemberRepository>(new MemberRepository());
             container.Register<IPasswordHasher>(new Pbkdf2PasswordHasher());
             container.Register<IDivisionRepository>(new DivisionRepository());
+            container.Register<IAttendanceRepository>(new AttendanceRepository());
 
             container.Register<ITokenizer>(new Tokenizer());
             // Example options for specifying additional values for token generation

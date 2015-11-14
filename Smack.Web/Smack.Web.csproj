@@ -70,6 +70,7 @@
     <Content Include="app\attendance\attendance.js" />
     <Content Include="app\dashboard\dashboard.html" />
     <Content Include="app\dashboard\dashboard.js" />
+    <Content Include="app\services\attendanceService.js" />
     <Content Include="app\services\divisionService.js" />
     <Content Include="app\services\memberService.js" />
     <Content Include="packages.config" />
