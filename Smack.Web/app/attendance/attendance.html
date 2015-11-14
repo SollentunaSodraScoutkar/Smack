@@ -11,19 +11,19 @@
         <form name="form" ng-submit="vm.attendance()" role="form" class="form-inline" novalidate>
             <div class="col-xs-12 form-group margin-top-xsmall">
                 <div>
-                    <input type="date" ng-model="vm.attendance.dtmAttendanceDate" value="" /><button class="btn btn-primary" ng-click="vm.setToday($event)">Idag</button>
+                    <input type="date" ng-model="vm.attendance.dtmAttendanceDate" value="" /><button class="btn btn-primary btn-xs" ng-click="vm.setToday($event)">Idag</button>
                 </div>
             </div>
             <div class="col-xs-12 form-group margin-top-xsmall">
                 <div>
                     <label for="division">Avdelning</label>
-                    <select id="division" class="form-control" ng-change="vm.getMembers(p.intDivisionID)" ng-model="vm.attendance.intDivisionId" ng-options="p.intDivisionID as p.varName for p in vm.divisions" ng-disabled="!vm.attendance.dtmAttendanceDate"></select>
+                    <select id="division" class="form-control input-sm" ng-change="vm.getMembers(p.intDivisionID)" ng-model="vm.attendance.intDivisionId" ng-options="p.intDivisionID as p.varName for p in vm.divisions" ng-disabled="!vm.attendance.dtmAttendanceDate"></select>
                 </div>
             </div>
-            <div class="col-xs-12 form-group ">
-                <table class="visible-xs-inline-block text-left">
+            <div class="col-xs-12 form-group text-center ">
+                <table class="text4">
                     <tr ng-swipe-left="vm.attend(member)" ng-swipe-right="vm.unattend(member)" ng-click="vm.toggleAttend(member)" ng-repeat="member in vm.members">
-                        <td><span ng-show="member.blnAttend==undefined"> ?</span><span ng-show="member.blnAttend"> HÄR</span><span ng-show="member.blnAttend==false"> BORTA</span></td><td >{{member.chrFirstName}} {{member.chrLastName}}</td>
+                        <td><span ng-show="member.blnAttend==undefined" class="glyphicon glyphicon-question-sign blueFont"></span><span ng-show="member.blnAttend" class="glyphicon glyphicon-ok-sign greenFont"></span><span ng-show="member.blnAttend==false" class="glyphicon glyphicon-remove-sign redFont"></span></td><td class="text-left" > {{member.chrFirstName}} {{member.chrLastName}}</td>
                     </tr>
                 </table>
             </div>

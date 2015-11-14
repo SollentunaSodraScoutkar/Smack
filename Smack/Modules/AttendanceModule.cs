@@ -30,5 +30,6 @@ namespace Smack.Modules
             attendance.IntAttendanceId = _attendanceRepository.CreateAttendance(attendance);
             return attendance;
         }
+
     }
 }
