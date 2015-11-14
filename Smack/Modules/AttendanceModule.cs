@@ -20,6 +20,14 @@ namespace Smack.Modules
             Post["/"] = x => GetAttendance();
             Get["/{attendanceId}/members"] = x => GetMemberAttendanceById(x.attendanceId);
             Put["/members"] = x => SaveMemberAttendance();
+            Put["/"] = x => UpdateAttendance();
+        }
+
+        private HttpStatusCode UpdateAttendance()
+        {
+            var attendance = this.Bind<Attendance>();
+            _attendanceRepository.UpdateAttendance(attendance);
+            return HttpStatusCode.OK;
         }
 
         private HttpStatusCode SaveMemberAttendance()

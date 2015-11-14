@@ -11,7 +11,8 @@
         return {
             getAttendance: getAttendance,
             getMemberAttendanceById: getMemberAttendanceById,
-            saveMemberAttendance: saveMemberAttendance
+            saveMemberAttendance: saveMemberAttendance,
+            updateAttendance: updateAttendance
         }
 
         function getAttendance(attendance) {
@@ -24,6 +25,10 @@
 
         function saveMemberAttendance(memberAttendance) {
             $http.put(restService.getPath() + '/attendance/members', memberAttendance);
+        };
+
+        function updateAttendance(attendance) {
+            return $http.put(restService.getPath() + '/attendance', attendance);
         };
 
     }

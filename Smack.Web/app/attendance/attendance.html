@@ -11,13 +11,13 @@
         <form name="form" ng-submit="vm.attendance()" role="form" class="form-inline" novalidate>
             <div class="col-xs-12 form-group margin-top-xsmall">
                 <div>
-                    <input type="date" ng-model="vm.attendance.dtmAttendanceDate" value="" /><button class="btn btn-primary btn-xs" ng-click="vm.setToday($event)">Idag</button>
+                    <input type="date" ng-model="vm.attendance.dtmAttendanceDate" value="" ng-change="vm.getMembers()" /><button class="btn btn-primary btn-xs" ng-click="vm.setToday($event)">Idag</button>
                 </div>
             </div>
             <div class="col-xs-12 form-group margin-top-xsmall">
                 <div>
                     <label for="division">Avdelning</label>
-                    <select id="division" class="form-control input-sm" ng-change="vm.getMembers(p.intDivisionID)" ng-model="vm.attendance.intDivisionId" ng-options="p.intDivisionID as p.varName for p in vm.divisions" ng-disabled="!vm.attendance.dtmAttendanceDate"></select>
+                    <select id="division" class="form-control input-sm" ng-change="vm.getMembers()" ng-model="vm.attendance.intDivisionId" ng-options="p.intDivisionID as p.varName for p in vm.divisions" ng-disabled="!vm.attendance.dtmAttendanceDate"></select>
                 </div>
             </div>
             <div class="col-xs-12 form-group text-center ">
@@ -27,7 +27,7 @@
                     </tr>
                 </table>
             </div>
-            <input type="button" value="Klar!" class="btn btn-primary"/>
+            <input type="button" value="Klar!" ng-click="vm.confirm()" class="btn btn-primary" ng-disabled="!vm.attendance.intAttendanceId"/>
         </form>
     </div>
 </div>

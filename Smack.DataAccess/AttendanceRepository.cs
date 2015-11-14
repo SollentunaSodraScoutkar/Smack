@@ -34,6 +34,14 @@ namespace Smack.DataAccess
             return existingAttendance;
         }
 
+        public void UpdateAttendance(Attendance attendance)
+        {
+            using (var sqlConnection = GetSqlConnection())
+            {
+                string sql = "UPDATE Attendance SET blnConfirmed = @blnConfirmed WHERE intAttendanceId = @intAttendanceId";
+                sqlConnection.Execute(sql, attendance);
+            }
+        }
         public IEnumerable<MemberAttendance> GetMemberAttendanceByAttendanceId(int id)
         {
             IEnumerable<MemberAttendance> memberAttendance;

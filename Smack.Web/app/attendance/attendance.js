@@ -35,26 +35,27 @@
         vm.attendance = {};
 
         vm.getMembers = function () {
-            attendanceService.getAttendance(vm.attendance)
-                .then(function (response) {
-                    var s = response.data;
-                    s.dtmAttendanceDate = new Date(s.dtmAttendanceDate);
-                    vm.attendance = s;
-                })
-                .then(function () {
-                    attendanceService.getMemberAttendanceById(vm.attendance.intAttendanceId)
-                        .then(function (response) {
-                            vm.memberAttendances = response.data;
-                        });
-                })
-
+            if (vm.attendance.intDivisionId) {
+                attendanceService.getAttendance(vm.attendance)
+                    .then(function (response) {
+                        var s = response.data;
+                        s.dtmAttendanceDate = new Date(s.dtmAttendanceDate);
+                        vm.attendance = s;
+                    })
+                    .then(function () {
+                        attendanceService.getMemberAttendanceById(vm.attendance.intAttendanceId)
+                            .then(function (response) {
+                                vm.memberAttendances = response.data;
+                            });
+                    })
+            }
         }
 
         vm.attend = function (member) {
             member.blnAttend = true;
             attendanceService.saveMemberAttendance(member);
         }
-        
+
         vm.unattend = function (member) {
             member.blnAttend = false;
             attendanceService.saveMemberAttendance(member);
@@ -70,5 +71,11 @@
             vm.attendance.dtmAttendanceDate = new Date();
         }
 
+        vm.confirm = function () {
+            vm.attendance.blnConfirmed = true;
+            attendanceService.updateAttendance(vm.attendance).then(function () {
+                vm.message = "Listan är klar!";
+            })
+        }
     }
 })();
