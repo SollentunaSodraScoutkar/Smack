@@ -72,6 +72,7 @@
     <Content Include="app\dashboard\dashboard.js" />
     <Content Include="app\services\divisionService.js" />
     <Content Include="app\services\memberService.js" />
+    <Content Include="content\img\logo.png" />
     <Content Include="packages.config" />
     <Content Include="bower_components\angular\.bower.json" />
     <Content Include="bower_components\angular\angular.min.js.gzip" />
