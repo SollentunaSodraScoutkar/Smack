@@ -22,7 +22,7 @@ namespace Smack.Modules
         private void Initialize()
         {
             //this.RequiresHttps();
-            this.RequiresAuthentication();
+            //this.RequiresAuthentication();
         }
     }
 }

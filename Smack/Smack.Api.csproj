@@ -93,6 +93,7 @@
     <Compile Include="CustomBootstrapper.cs" />
     <Compile Include="IPasswordHasher.cs" />
     <Compile Include="Modules\AuthModule.cs" />
+    <Compile Include="Modules\DivisionModule.cs" />
     <Compile Include="Modules\MemberModule.cs" />
     <Compile Include="Modules\SecureModule.cs" />
     <Compile Include="Pbkdf2PasswordHasher.cs" />

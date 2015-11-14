@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DivisionRepository.cs" />
+    <Compile Include="IDivisionRepository.cs" />
     <Compile Include="IMemberRepository.cs" />
     <Compile Include="IUserRepository.cs" />
     <Compile Include="MemberRepository.cs" />
