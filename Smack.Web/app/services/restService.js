@@ -32,7 +32,7 @@
             if (host === 'localhost') {
                 return 'http://localhost:51151/smack';
             }
-            return 'unknown host for REST API';
+            return 'http://smackapi.beemem.se/smack';
         };
 
     }

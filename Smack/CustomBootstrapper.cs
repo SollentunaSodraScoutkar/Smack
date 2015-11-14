@@ -27,6 +27,7 @@ namespace Smack
 
         protected override void RequestStartup(TinyIoCContainer container, IPipelines pipelines, NancyContext context)
         {
+            StaticConfiguration.DisableErrorTraces = false;
             pipelines.OnError.AddItemToEndOfPipeline((z, a) =>
             {
                 return null;// ErrorResponse.FromException(a);
