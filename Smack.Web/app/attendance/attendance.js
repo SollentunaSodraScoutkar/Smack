@@ -32,5 +32,14 @@
         }
 
         vm.getDivisions();
+        vm.attendance = {};
+
+        vm.getMembers = function () {
+            divisionService.getMembers(vm.attendance.intDivisionId)
+                .then(function (response) {
+                    vm.attendance.members = response.data;
+                });
+
+        }
     }
 })();

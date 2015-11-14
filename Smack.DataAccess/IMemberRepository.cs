@@ -7,5 +7,6 @@ namespace Smack.DataAccess
     {
         IEnumerable<Member> GetAll();
         void Save(Member member);
+        IEnumerable<Member> GetFromDivision(int intDivisionId);
     }
 }
