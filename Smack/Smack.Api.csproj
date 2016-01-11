@@ -97,6 +97,7 @@
     <Compile Include="Modules\AuthModule.cs" />
     <Compile Include="Modules\DivisionModule.cs" />
     <Compile Include="Modules\MemberModule.cs" />
+    <Compile Include="Modules\QueueMemberModule.cs" />
     <Compile Include="Modules\SecureModule.cs" />
     <Compile Include="OldSercurity.cs" />
     <Compile Include="Pbkdf2PasswordHasher.cs" />

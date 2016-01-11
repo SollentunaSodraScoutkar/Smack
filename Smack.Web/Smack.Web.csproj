@@ -66,13 +66,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\addqueuemember\addQueueMember.html" />
     <Content Include="app\attendance\attendance.html" />
     <Content Include="app\attendance\attendance.js" />
     <Content Include="app\dashboard\dashboard.html" />
     <Content Include="app\dashboard\dashboard.js" />
+    <Content Include="app\addqueuemember\addQueueMember.js" />
     <Content Include="app\services\attendanceService.js" />
     <Content Include="app\services\divisionService.js" />
     <Content Include="app\services\memberService.js" />
+    <Content Include="app\services\queueService.js" />
     <Content Include="content\img\logo.png" />
     <Content Include="Index.html" />
     <Content Include="packages.config" />
